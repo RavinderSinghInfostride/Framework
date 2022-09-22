@@ -14,6 +14,7 @@ Feature: feature to test login functionality
     And clicks on login button
     Then user is navigated to home page
     And user logs out
+    And browser closes
     Examples:
       | username | password |
       | standard_user | secret_sauce |

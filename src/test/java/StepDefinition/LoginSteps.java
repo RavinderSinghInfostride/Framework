@@ -28,8 +28,12 @@ public class LoginSteps extends BaseClass {
     }
 
     @And("user logs out")
-    public void user_logs_out()
-    {
+    public void user_logs_out() {
         pageFactory.getLoginPage().logout();
+    }
+
+    @And("browser closes")
+    public void browser_closes() {
+        close_browser();
     }
 }

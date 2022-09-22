@@ -28,4 +28,10 @@ public class AddProductToCartSteps extends BaseClass {
     public void product_is_added_product() {
         pageFactory.getHomePage().productAddedVerify();
     }
+
+    @Then("closes browser")
+    public void closes_browser() {
+        close_browser();
+    }
+
 }

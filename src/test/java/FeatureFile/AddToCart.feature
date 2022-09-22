@@ -5,6 +5,7 @@ Feature: to test add to cart functionality
     When user enters "<username>" and "<password>" and clicks on login button
     And click add to cart button of a product
     Then product is added product
+    Then closes browser
     Examples:
       | username      | password     |
       | standard_user | secret_sauce |
