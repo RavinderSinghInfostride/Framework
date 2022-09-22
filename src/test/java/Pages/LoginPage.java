@@ -18,30 +18,25 @@ public class LoginPage {
     By hamburgerMenuButton = By.xpath("//button[contains(text(),'Open Menu')]");
     By logoutMenuOptionLink = By.xpath("//a[contains(text(),'Logout')]");
 
-    public LoginPage(WebDriver driver)
-    {
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void enterLoginCredentials(String username, String password)
-    {
+    public void enterLoginCredentials(String username, String password) {
         driver.findElement(usernameInput).sendKeys(username);
         driver.findElement(passwordInput).sendKeys(password);
     }
 
-    public void clickLoginButton()
-    {
+    public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }
 
-    public void landingPageVerificationAfterLogin()
-    {
+    public void landingPageVerificationAfterLogin() {
         String isProductPageDisplayed = driver.findElement(landingPageVerifyAfterLogin).getText();
         Assert.assertEquals("PRODUCTS", isProductPageDisplayed);
     }
 
-    public void logout()
-    {
+    public void logout() {
         driver.findElement(hamburgerMenuButton).click();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(logoutMenuOptionLink));
